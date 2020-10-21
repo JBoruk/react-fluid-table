@@ -61,7 +61,13 @@ const ListComponent = forwardRef(
     // functions
     const generateKeyFromRow = useCallback(
       (row: Generic, defaultValue: number): Text => {
+        console.log('item key:');
+        console.log(itemKey);
+        console.log('row:')
+        console.log(row);
         const generatedKey = itemKey ? itemKey(row) : undefined;
+        console.log('generated key:')
+        console.log(generatedKey)
         return generatedKey !== undefined ? generatedKey : defaultValue;
       },
       [itemKey]
